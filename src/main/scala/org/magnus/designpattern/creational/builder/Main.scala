@@ -4,8 +4,9 @@ object Main {
 
   def main(args: Array[String]): Unit = {
     val guitar = GuitarBuilder()
-      .withElectric(true)
-      .withTone("brit-j800")
+      .isElectric(false)
+      .tone("brit-j800")
+      .tuning("custom")
       .build()
 
     println(guitar.toString)

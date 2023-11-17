@@ -8,19 +8,23 @@ case class GuitarBuilder private(
                                   reverb: Float = 0.0f,
                                   delay: Int = 0
                                 ) {
-  def withElectric(isElectric: Boolean): GuitarBuilder =
+  def isElectric(isElectric: Boolean): GuitarBuilder =
     copy(isElectric = isElectric)
 
-  def withNStrings(nStrings: Int): GuitarBuilder =
+  def numberOfStrings(nStrings: Int): GuitarBuilder =
     copy(numberOfStrings = nStrings)
 
-  def withTuning(tuning: String): GuitarBuilder = copy(tuning = tuning)
+  def tuning(tuning: String): GuitarBuilder =
+    copy(tuning = tuning)
 
-  def withTone(tone: String): GuitarBuilder = copy(tone = tone)
+  def tone(tone: String): GuitarBuilder =
+    copy(tone = tone)
 
-  def withReverb(reverb: Float): GuitarBuilder = copy(reverb = reverb)
+  def reverb(reverb: Float): GuitarBuilder =
+    copy(reverb = reverb)
 
-  def withDelay(delay: Int): GuitarBuilder = copy(delay = delay)
+  def delay(delay: Int): GuitarBuilder =
+    copy(delay = delay)
 
   def build() = Guitar(
     isElectric = isElectric,
