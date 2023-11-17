@@ -4,11 +4,11 @@ package org.magnus.designpattern.creational.factorymethod
 object Main {
 
   def main(args: Array[String]): Unit = {
-    val csvReader = ReaderFactory("file.csv")
+    val csvReader: Reader = ReaderFactory("file.csv")
     csvReader.open()
-    val jsonReader = ReaderFactory("file.json")
+    val jsonReader: Reader = ReaderFactory("file.json")
     jsonReader.open()
-    val parquetReader = ReaderFactory("file.parquet")
+    val parquetReader: Reader = ReaderFactory("file.parquet")
     parquetReader.open()
   }
 }

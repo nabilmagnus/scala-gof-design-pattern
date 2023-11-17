@@ -1,6 +1,6 @@
 package org.magnus.designpattern.creational.factorymethod
 
-import org.magnus.designpattern.creational.factorymethod.reader.{csvReader, jsonReader, parquetReader}
+import org.magnus.designpattern.creational.factorymethod.reader.{CsvReader, JsonReader, ParquetReader}
 
 
 object ReaderFactory extends Factory {
@@ -12,9 +12,9 @@ object ReaderFactory extends Factory {
     }
     val endsWith = s.substring(pos)
     endsWith match {
-      case ".csv" => csvReader(s)
-      case ".json" => jsonReader(s)
-      case ".parquet" => parquetReader(s)
+      case ".csv" => CsvReader(s)
+      case ".json" => JsonReader(s)
+      case ".parquet" => ParquetReader(s)
       case _ => throw new RuntimeException("Unknown file type")
     }
   }
